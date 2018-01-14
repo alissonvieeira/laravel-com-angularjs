@@ -25,6 +25,12 @@ Route::group(['prefix' => 'client'], function(){
 
 Route::group(['prefix' => 'project'], function(){
 
+    Route::get('{id}/note', 'ProjectNoteController@index');
+    Route::post('{id}/note', 'ProjectNoteController@store');
+    Route::get('{id}/note/{noteId}', 'ProjectNoteController@show');
+    Route::put('{id}/note/{noteId}', 'ProjectNoteController@update');
+    Route::delete('{id}/note/{noteId}', 'ProjectNoteController@destroy');
+
     Route::get('', 'ProjectController@index');
     Route::post('', 'ProjectController@store');
     Route::get('{id}', 'ProjectController@show');
