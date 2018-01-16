@@ -37,4 +37,10 @@ Route::group(['prefix' => 'project'], function(){
     Route::put('{id}', 'ProjectController@update');
     Route::delete('{id}', 'ProjectController@destroy');
 
+    Route::get('{id}/task', 'ProjectTaskController@index');
+    Route::post('{id}/task', 'ProjectTaskController@store');
+    Route::get('{id}/task/{taskId}', 'ProjectTaskController@show');
+    Route::put('{id}/task/{taskId}', 'ProjectTaskController@update');
+    Route::delete('{id}/task/{taskId}', 'ProjectTaskController@destroy');
+
 });
